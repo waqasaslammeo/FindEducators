@@ -1,0 +1,135 @@
+﻿@using FindEducators.Common
+@model FindEducators.Models.User
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_HomePage.cshtml";
+}
+
+<section id="inner-banner">
+    <div class="container">
+        <h1>Register Your Account</h1>
+    </div>
+</section>
+<div class="main">
+    <section class="signup-section">
+
+        <div class="holder">
+            <div class="thumb"><img src="@CommonResources.IMG_SIGN_UP" alt="img"></div>
+            @using (Html.BeginForm( new { id = "signupform" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                  
+                    <div class="input-box">
+                       
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.FirstName)" id="@Html.DisplayNameFor(model => model.FirstName)" placeholder="@Html.DisplayNameFor(model => model.FirstName)" class="txtBox" required>
+                          
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.MiddleName)" id="@Html.DisplayNameFor(model => model.MiddleName)" placeholder="@Html.DisplayNameFor(model => model.MiddleName)">
+                           
+                        </div>
+                    </div>
+
+                    <div class="input-box">                       
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.LastName)" id="@Html.DisplayNameFor(model => model.LastName)" placeholder="@Html.DisplayNameFor(model => model.LastName)" required>
+                           
+                        </div>
+                    </div>
+                   
+                    <div class="input-box">
+                        
+
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="password" name="Password" id="Password" placeholder="Password" style=" float: left; width: 100%; height: 45px; border: 1px solid #ccc; font: 400 14px/14px 'Roboto',sans-serif; color: #666; padding: 0 10px 0 35px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; margin: 0 0 20px 0; border-radius: 3px;" required>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.CNIC)" id="@Html.DisplayNameFor(model => model.CNIC)" placeholder="@Html.DisplayNameFor(model => model.CNIC)" required>
+                           
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" id="DOB" name="@Html.DisplayNameFor(model => model.DOB)" id="@Html.DisplayNameFor(model => model.DOB)" placeholder="@Html.DisplayNameFor(model => model.DOB)" required>
+                          
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                      
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.EmailAddress)" id="@Html.DisplayNameFor(model => model.EmailAddress)" placeholder="@Html.DisplayNameFor(model => model.EmailAddress)" required>
+                           
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.PhoneNo1)" id="@Html.DisplayNameFor(model => model.PhoneNo1)" placeholder="@Html.DisplayNameFor(model => model.PhoneNo1)" required>
+         
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.PhoneNo2)"  id="@Html.DisplayNameFor(model => model.PhoneNo2)" placeholder="@Html.DisplayNameFor(model => model.PhoneNo2)" >
+                         
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        
+                        <div class="col-md-12">
+                            <i class="fa fa-pencil"></i>
+                            <input type="text" name="@Html.DisplayNameFor(model => model.Address)" id="@Html.DisplayNameFor(model => model.Address)" placeholder="@Html.DisplayNameFor(model => model.Address)" required>
+                           
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                        @Html.LabelFor(model => model.UserTypeId, "UserTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("UserTypeId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.UserTypeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+                    
+                    <div class="form-group input-box">
+                        <div class="col-md-9">
+                            <input type="submit" value="Register Me" id="btnSubmit" class="btn btn-default" />
+                        </div>
+                        <label style="font-size: 11px;font-weight:normal !important;"><i>By clicking this button, you are agreeing with our term & conditions</i></label>
+                    </div>
+                </div>
+            }
+
+            
+        </div>
+
+    </section>
+</div>

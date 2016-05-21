@@ -1,0 +1,99 @@
+﻿@using FindEducators.Common
+
+@{
+    ViewBag.Title = "Degree";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="clearfix">
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-list" style="font-size: 20px;text-transform: uppercase;">
+                        Degree  <small style="font-size: 12px;">ENTRY FORM</small>
+                    </i>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <!-- BEGIN FORM-->
+                <form action="#" class="form-horizontal">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-body">
+
+                                    <div class="form-group" style="margin:53px 0px 0px 0px">
+                                        <div class="col-md-12">
+                                            <input type="hidden" name="DegreeId" id="txtDegreeId">
+                                            <input type="text" class="form-control" placeholder="Degree Name" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div style="margin:20px 0px 0px 0px">
+                                    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Degree Name
+                                                </th>
+                                                <th>
+
+                                                </th>
+                                                <th>
+
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center">
+                                                    power user
+                                                </td>
+                                                <td style="width:20px;">
+                                                    <a class="edit" href="javascript:;">
+                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
+                                                    </a>
+                                                </td>
+                                                <td style="width:20px;">
+                                                    <a class="delete" href="javascript:;">
+                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" class="btn green">Submit</button>
+                                <button type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- END FORM-->
+            </div>
+        </div>
+        <!-- END VALIDATION STATES-->
+    </div>
+</div>
+<div class="clearfix">
+</div>
+

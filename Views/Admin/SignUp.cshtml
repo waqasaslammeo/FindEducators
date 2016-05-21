@@ -1,0 +1,69 @@
+﻿@model FindEducators.Models.Admin
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<<form class="register-form" action="index.html" method="post">
+     <div class="col-sm-4">
+         <p class="hint">
+             Enter your personal details below:
+         </p>
+         
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">First Name</label>
+             <input class="form-control placeholder-no-fix" type="text" placeholder="First Name" name="FirstName" />
+         </div>
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">Middle Name</label>
+             <input class="form-control placeholder-no-fix" type="text" placeholder="Middle Name" name="MiddleName" />
+         </div>
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">Last Name</label>
+             <input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" name="LastName" />
+         </div>
+
+         <div class="form-group">
+             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+             <label class="control-label visible-ie8 visible-ie9">Email</label>
+             <input class="form-control placeholder-no-fix" type="text" placeholder="Email Address" name="EmailAddress" />
+         </div>
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">Phone</label>
+             <input class="form-control placeholder-no-fix" type="text" placeholder="Phone1" name="Phone1" />
+         </div>
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">Address</label>
+             <input class="form-control placeholder-no-fix" type="text" placeholder="Address" name="address" />
+         </div>
+
+
+         <p class="hint">
+             Enter your account details below:
+         </p>
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">Username</label>
+             <input class="form-control placeholder-no-fix" placeholder="@Html.DisplayNameFor(model=>model.UserName)" name="@Html.DisplayNameFor(model=>model.UserName)" />
+         </div>
+         <div class="form-group">
+             <label class="control-label visible-ie8 visible-ie9">Password</label>
+             <input class="form-control placeholder-no-fix" type="@Html.DisplayNameFor(model=>model.Password)" id="@Html.DisplayNameFor(model=>model.Password)" placeholder="@Html.DisplayNameFor(model=>model.Password)" name="password" />
+         </div>
+
+         <div class="form-group margin-top-20 margin-bottom-20">
+             <label class="check">
+                 <input type="checkbox" name="tnc" /> I agree to the <a href="#">
+                     Terms of Service
+                 </a>
+                 & <a href="#">
+                     Privacy Policy
+                 </a>
+             </label>
+             <div id="register_tnc_error">
+             </div>
+         </div>
+     <div class="form-actions">
+         <button type="button" id="register-back-btn" class="btn btn-default">Back</button>
+         <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
+     </div>
+         </div>
+</form>
