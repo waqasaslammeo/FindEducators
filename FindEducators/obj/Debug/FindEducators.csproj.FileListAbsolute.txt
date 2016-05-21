@@ -184,4 +184,3 @@ F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.FindEducat
 F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.csproj.GenerateResource.Cache
 F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.dll
 F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.pdb
-F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.csprojResolveAssemblyReference.cache
