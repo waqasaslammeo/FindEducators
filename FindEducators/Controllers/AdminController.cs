@@ -129,7 +129,7 @@ namespace FindEducators.Controllers
         }
     
 
-             public ActionResult DeleteDegree(int id = 0)
+        public ActionResult DeleteDegree(int id = 0)
             {
                 FindEducatorsRepository.DeleteDegree(id);
 
@@ -476,23 +476,9 @@ namespace FindEducators.Controllers
         {
             return View();
         }
-[HttpGet]
+
+        [HttpGet]
         public ActionResult SubjectCategory(int id = 0)
-
-        public ActionResult PostType()
-        {
-        
-            return View();
-        }
-
-
-        public ActionResult Subject()
-        {
-            return View();
-        }
-
-
-        public ActionResult SubjectCategory()
         {
             var subjectCategoryList = FindEducatorsRepository.GetAllSubjectCategories();
             var subjectCategory = new SubjectCategory();
@@ -510,7 +496,15 @@ namespace FindEducators.Controllers
 
             ViewBag.SubjectCategory = subjectCategory;
             return View(subjectCategory);
+
         }
+    
+
+
+
+
+
+       
 
         [HttpPost]
         public ActionResult SubjectCategory(SubjectCategory subjectCategory)
@@ -538,16 +532,12 @@ namespace FindEducators.Controllers
 
         public ActionResult DeleteSubjectCategory(int id = 0)
         {
-        public ActionResult TestLevel()
-        {
-            FindEducatorsRepository.DeleteSubjectCategory(id);
+              FindEducatorsRepository.DeleteSubjectCategory(id);
 
             return RedirectToAction("SubjectCategory");
         }
 
-
-
-      
+ 
         [HttpGet]
         public ActionResult TestLevel(int id = 0)
         {
@@ -595,13 +585,11 @@ namespace FindEducators.Controllers
 
         public ActionResult DeleteTestLevel(int id = 0)
         {
-
-        public ActionResult Test()
-        {
             FindEducatorsRepository.DeleteTestLevel(id);
 
             return RedirectToAction("TestLevel");
         }
+
        
 
         [HttpGet]
@@ -651,12 +639,12 @@ namespace FindEducators.Controllers
 
         public ActionResult DeleteTest(int id = 0)
         {
-        public ActionResult TestType()
-        {
             FindEducatorsRepository.DeleteTest(id);
 
             return RedirectToAction("Test");
         }
+
+
         
 
         [HttpGet]
