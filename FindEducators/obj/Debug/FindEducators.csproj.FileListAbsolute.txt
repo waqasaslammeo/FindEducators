@@ -1,64 +1,65 @@
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\FindEducators.dll.config
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\FindEducators.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\FindEducators.pdb
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Antlr3.Runtime.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\EntityFramework.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\EntityFramework.SqlServer.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Google.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Web.Infrastructure.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Newtonsoft.Json.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Owin.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Net.Http.Formatting.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Helpers.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Http.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Http.WebHost.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Mvc.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Optimization.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Razor.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Deployment.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.WebPages.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Razor.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\WebGrease.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Net.Http.Formatting.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Http.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Http.WebHost.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Helpers.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Mvc.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Optimization.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.Razor.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.WebPages.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Deployment.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Razor.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Antlr3.Runtime.pdb
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Newtonsoft.Json.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\EntityFramework.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\EntityFramework.SqlServer.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Google.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Tayyab Personal\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Migrations.InitialCreate.resources
-E:\Tayyab Personal\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.AdminResources.resources
-E:\Tayyab Personal\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.FindEducatorsResources.resources
-E:\Tayyab Personal\Work\FindEducators\FindEducators\obj\Debug\FindEducators.csproj.GenerateResource.Cache
-E:\Tayyab Personal\Work\FindEducators\FindEducators\obj\Debug\FindEducators.dll
-E:\Tayyab Personal\Work\FindEducators\FindEducators\obj\Debug\FindEducators.pdb
+F:\Work\FindEducators\FindEducators\bin\FindEducators.dll.config
+F:\Work\FindEducators\FindEducators\bin\FindEducators.dll
+F:\Work\FindEducators\FindEducators\bin\FindEducators.pdb
+F:\Work\FindEducators\FindEducators\bin\Antlr3.Runtime.dll
+F:\Work\FindEducators\FindEducators\bin\EntityFramework.dll
+F:\Work\FindEducators\FindEducators\bin\EntityFramework.SqlServer.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Google.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Web.Infrastructure.dll
+F:\Work\FindEducators\FindEducators\bin\Newtonsoft.Json.dll
+F:\Work\FindEducators\FindEducators\bin\Owin.dll
+F:\Work\FindEducators\FindEducators\bin\System.Net.Http.Formatting.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.Helpers.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.Http.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.Http.WebHost.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.Mvc.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.Optimization.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.Razor.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Deployment.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.WebPages.dll
+F:\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Razor.dll
+F:\Work\FindEducators\FindEducators\bin\WebGrease.dll
+F:\Work\FindEducators\FindEducators\bin\System.Net.Http.Formatting.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.Http.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.Http.WebHost.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.Helpers.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.Mvc.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.Optimization.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.Razor.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.WebPages.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Deployment.xml
+F:\Work\FindEducators\FindEducators\bin\System.Web.WebPages.Razor.xml
+F:\Work\FindEducators\FindEducators\bin\Antlr3.Runtime.pdb
+F:\Work\FindEducators\FindEducators\bin\Newtonsoft.Json.xml
+F:\Work\FindEducators\FindEducators\bin\EntityFramework.xml
+F:\Work\FindEducators\FindEducators\bin\EntityFramework.SqlServer.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Google.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Work\FindEducators\FindEducators\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.csprojResolveAssemblyReference.cache
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Migrations.InitialCreate.resources
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.AdminResources.resources
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.FindEducatorsResources.resources
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.csproj.GenerateResource.Cache
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.dll
+F:\Work\FindEducators\FindEducators\obj\Debug\FindEducators.pdb

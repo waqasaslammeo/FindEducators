@@ -37,16 +37,21 @@ namespace FindEducators.Controllers
         {
             return View();
         }
+
+
          [HttpGet]
          public ActionResult SignIn()
          {
              return View();
          }
+
+
          [HttpPost]
          public ActionResult SignIn(Admin admin)
          {
              return View();
          }
+
 
         [HttpGet]
         public ActionResult DegreeType(int id=0)
@@ -61,13 +66,13 @@ namespace FindEducators.Controllers
             {
                 degreeType.Id = -1;
                 degreeType.DegreeTypeName = "";
-            }
-                      
+            }                      
             ViewBag.DegreeTypeList = degreeTypeList;
-
             ViewBag.DegreeType = degreeType;
             return View(degreeType);
         }
+
+
 
         [HttpPost]
         public ActionResult DegreeType(DegreeType degreeType)
@@ -100,204 +105,409 @@ namespace FindEducators.Controllers
             return RedirectToAction("DegreeType");
         }
 
-        public ActionResult Degree()
+
+        [HttpGet]
+        public ActionResult Degree(int id=0)
         {
+            var degreeList = FindEducatorsRepository.GetAllDegrees();
+            var degree = new Degree();
+            if (id > 0)
+            {
+                degree = FindEducatorsRepository.GetDegreeById(id);
+            }
+            else
+            {
+                degree.Id = -1;
+                degree.DegreeName = "";
+
+            }
+
+            ViewBag.DegreeList = degreeList;
+
+            ViewBag.Degree = degree;
+            return View(degree);
+        }
+    
+
+             public ActionResult DeleteDegree(int id = 0)
+            {
+                FindEducatorsRepository.DeleteDegree(id);
+
+                return RedirectToAction("Degree");
+            }
+        
+
+        [HttpPost]
+        public ActionResult Degree(Degree degree)
+        {
+            if (degree.Id > -1)
+            {
+                FindEducatorsRepository.UpdateDegree(degree);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertDegree(degree);
+            }
+
+            var degreeList = FindEducatorsRepository.GetAllDegrees();
+            ViewBag.DegreeList = degreeList;
+
+            degree.Id = -1;
+            degree.DegreeName = "";
+
+            ViewBag.Degree = degree;
+
             return View();
         }
 
-        public ActionResult Areas()
+
+        [HttpGet]
+        public ActionResult Area (int id=0)
         {
+            var areaList = FindEducatorsRepository.GetAllAreas();
+            var area = new Area();
+            if (id > 0)
+            {
+                area = FindEducatorsRepository.GetAreaById(id);
+            }
+            else
+            {
+                area.Id = -1;
+                area.AreaName = "";
+            }
+            ViewBag.AreaList = areaList;
+            ViewBag.Area = area;
+            return View(area);
+        }
+
+
+        public ActionResult DeleteArea(int id = 0)
+        {
+            FindEducatorsRepository.DeleteDegree(id);
+            return RedirectToAction("Degree");
+        }
+
+        [HttpPost]
+        public ActionResult Areas(Area area)
+        {
+            {
+                if (area.Id > -1)
+                {
+                    FindEducatorsRepository.UpdateArea(area);
+                }
+                else
+                {
+                    FindEducatorsRepository.InsertArea(area);
+                }
+                var areaList = FindEducatorsRepository.GetAllAreas();
+                ViewBag.AreaList = areaList;
+                area.Id = -1;
+                area.AreaName = "";
+                ViewBag.AreaList= area;
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Institute(int id= 0)
+        {
+            var instituteList = FindEducatorsRepository.GetAllInstitutes();
+            var institute = new Institute();
+            if (id > 0)
+            {
+                institute = FindEducatorsRepository.GetInstituteById(id);
+            }
+            else
+            {
+                institute.Id = -1;
+                institute.InstituteName = "";
+
+            }
+
+            ViewBag.InstituteList = instituteList;
+
+            ViewBag.Institute = institute;
+            return View(institute);
+        }
+
+
+        [HttpPost]
+        public ActionResult Institute(Institute institute)
+        {
+            if (institute.Id > -1)
+            {
+                FindEducatorsRepository.UpdateInstitute(institute);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertInstitute(institute);
+            }
+
+            var degreeTypeList = FindEducatorsRepository.GetAllInstitutes();
+            ViewBag.InstituteList = institute;
+
+            institute.Id = -1;
+            institute.InstituteName = "";
+
+            ViewBag.InstituteList = institute;
+
+            return View();  
+        }
+
+
+        public ActionResult DeleteInstitute(int id = 0)
+        {
+            FindEducatorsRepository.DeleteInstitute(id);
+
+            return RedirectToAction("Institute");
+        }
+
+
+        [HttpGet]
+        public ActionResult FeedbackType(int id =0)
+        {
+            var feedbackList = FindEducatorsRepository.GetAllFeedbackTypes();
+            var feedbackType = new FeedbackType();
+            if (id > 0)
+            {
+                feedbackType = FindEducatorsRepository.GetFeedBackTypeById(id);
+            }
+            else
+            {
+                feedbackType.Id = -1;
+                feedbackType.FeedbackTypeName = "";
+            }
+
+            //-- kami saly , object jo banaya hy list ka wo passs kry ga to kam hoga , , bc ankhain hain k taty hain ?
+            ViewBag.FeedbackTypeList = feedbackList;
+            ViewBag.FeedbackType = feedbackType;
+            return View(feedbackType);
+        }
+
+        [HttpPost]
+        public ActionResult FeedbackType(FeedbackType feedbackType)
+        {
+            if (feedbackType.Id > -1)
+            {
+                FindEducatorsRepository.UpdateFeedbackType(feedbackType);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertFeedbackType(feedbackType);
+            }
+
+            var feedbackTypeList = FindEducatorsRepository.GetAllFeedbackTypes();
+            ViewBag.FeedbackTypeList = feedbackTypeList;
+
+            feedbackType.Id = -1;
+            feedbackType.FeedbackTypeName= "";
+
+            ViewBag.FeedbackType = feedbackType;
+
             return View();
         }
 
-        public ActionResult Institution()
+        public ActionResult DeleteFeedbackType(int id)
         {
+            FindEducatorsRepository.DeleteFeedbackType(id);
+            return RedirectToAction("FeedbackType");
+        }
+
+        [HttpGet]
+        public ActionResult JobType(int id=0)
+        {
+            var jobTypeList = FindEducatorsRepository.GetAllJobTypes();
+            var jobType = new JobType();
+            if (id > 0)
+            {
+                jobType = FindEducatorsRepository.GetJobTypeById(id);
+            }
+            else
+            {
+                jobType.Id = -1;
+                jobType.JobTypeName = "";
+            }
+            ViewBag.JobTypeList = jobTypeList;
+            ViewBag.JobType = jobType;
+            return View(jobType);
+        }
+
+
+        [HttpPost]
+        public ActionResult JobType(JobType jobType)
+        {
+            if (jobType.Id > -1)
+            {
+                FindEducatorsRepository.UpdateJobType(jobType);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertJobType(jobType);
+            }
+
+            var jobTypeList = FindEducatorsRepository.GetAllJobTypes();
+            ViewBag.JobTypeList = jobTypeList;
+
+            jobType.Id = -1;
+            jobType.JobTypeName = "";
+            ViewBag.JobType = jobType;
+
             return View();
         }
-        public ActionResult FeedbackType()
+
+        public ActionResult DeleteJobType(int id=0)
         {
+            FindEducatorsRepository.DeleteJobType(id);
+
+            return RedirectToAction("JobType");
+        }
+
+
+        [HttpGet]
+        public ActionResult Log(int id= 0)
+        {
+            var logList = FindEducatorsRepository.GetAllLogs();
+            var log = new Log();
+            if (id > 0)
+            {
+                log = FindEducatorsRepository.GetLogById(id);
+            }
+            else
+            {
+                log.Id = -1;
+                log.LogDetail = "";
+            }
+            ViewBag.LogList = logList;
+            ViewBag.Log = log;
+            return View(log);
+
+        }
+
+        [HttpPost]
+        public ActionResult Log(Log log)
+        {
+            if (log.Id > -1)
+            {
+                FindEducatorsRepository.UpdateLog(log);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertLog(log);
+            }
+
+            var logList = FindEducatorsRepository.GetAllLogs();
+            ViewBag.LogList = logList;
+
+            log.Id = -1;
+            log.LogDetail = "";
+            log.LogTypeId = 0;
+
+            ViewBag.DegreeType = log;
+
             return View();
         }
-        public ActionResult JobType()
+
+        public ActionResult DeleteLog(int id = 0)
+            {
+                FindEducatorsRepository.DeleteLog(id);
+
+                return RedirectToAction("Log");
+            }
+
+
+         [HttpGet]
+        public ActionResult LogType(int id = 0)
         {
+            var logTypeList = FindEducatorsRepository.GetAllLogTypes();
+            var logType = new LogType();
+            if (id > 0)
+            {
+                logType = FindEducatorsRepository.GetLogTypeById(id);
+            }
+            else
+            {
+                logType.Id = -1;
+                logType.LogTypeName = "";
+            }
+            ViewBag.LogTypeList = logTypeList;
+            ViewBag.LogType = logType;
+            return View(logType);
+        }
+
+
+        [HttpPost]
+        public ActionResult LogType(LogType logType)
+        {
+            if (logType.Id > -1)
+            {
+                FindEducatorsRepository.UpdateLogType(logType);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertLogType(logType);
+            }
+
+            var degreeTypeList = FindEducatorsRepository.GetAllLogTypes();
+            ViewBag.LogType = logType;
+
+            logType.Id = -1;
+            logType.LogTypeName= "";
+
+            ViewBag.DegreeType = logType;
+
             return View();
         }
-        public ActionResult Log()
+
+        public ActionResult DeleteLogType(int id = 0)
         {
-            return View();
+            FindEducatorsRepository.DeleteLogType(id);
+
+            return RedirectToAction("LogType");
         }
+
+
         public ActionResult LogType()
         {
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Post (int id =0)
+
+        public ActionResult Post ()
         {
-            var postList = FindEducatorsRepository.GetAllPost();
-            var post = new Post();
-            if (id > 0)
-            {
-                post = FindEducatorsRepository.GetPostById(id);
-            }
-            else
-            {
-                post.Id = -1;
-                post.PostTitle = "";
-            }
-
-            ViewBag.PostList = postList;
-
-            ViewBag.Post = post;
-            return View(post);
-        }
-        [HttpPost]
-        public ActionResult Post(Post post)
-        {
-            if (post.Id > -1)
-            {
-                FindEducatorsRepository.UpdatePost(post);
-            }
-            else
-            {
-                FindEducatorsRepository.InsertPost(post);
-            }
-
-            var postList = FindEducatorsRepository.GetAllPost();
-            ViewBag.PostList = postList;
-
-            post.Id = -1;
-            post.PostTitle = "";
-
-            ViewBag.Post = post;
-
-            return View();
-        }
-        public ActionResult DeletePost(int id = 0)
-        {
-            FindEducatorsRepository.DeletePost(id);
-
-            return RedirectToAction("Post");
-        }
-        
-        
-       
-        [HttpGet]
-        public ActionResult PostType(int id = 0)
-        {
-            var postTypeList = FindEducatorsRepository.GetAllPostsTypes();
-            var postType = new PostType();
-            if (id > 0)
-            {
-                postType = FindEducatorsRepository.GetPostTypeById(id);
-            }
-            else
-            {
-                postType.Id = -1;
-                postType.PostTypeName = "";
-            }
-
-            ViewBag.PostTypeList = postTypeList;
-
-            ViewBag.PostType = postType;
-            return View(postType);
-        }
-
-        [HttpPost]
-        public ActionResult PostType(PostType postType)
-        {
-            if (postType.Id > -1)
-            {
-                FindEducatorsRepository.UpdatePostType(postType);
-            }
-            else
-            {
-                FindEducatorsRepository.InsertPostType(postType);
-            }
-
-            var postTypeList = FindEducatorsRepository.GetAllPostsTypes();
-            ViewBag.PostTypeList = postTypeList;
-
-            postType.Id = -1;
-            postType.PostTypeName = "";
-
-            ViewBag.PostType = postType;
-
             return View();
         }
 
 
-        public ActionResult DeletePostType(int id = 0)
+        public ActionResult PostType()
         {
-            FindEducatorsRepository.DeletePostType(id);
-
-            return RedirectToAction("PostType");
-        }
-       
-
-        [HttpGet]
-        public ActionResult Subject(int id = 0)
-        {
-            var subjectList = FindEducatorsRepository.GetAllSubjects();
-            var subject = new Subject();
-            if (id > 0)
-            {
-                subject = FindEducatorsRepository.GetSubjectById(id);
-            }
-            else
-            {
-                subject.Id = -1;
-                subject.SubjectName = "";
-            }
-
-            ViewBag.SubjectList = subjectList;
-
-            ViewBag.Subject = subject;
-            return View(subject);
-        }
-
-        [HttpPost]
-        public ActionResult Subject(Subject subject)
-        {
-            if (subject.Id > -1)
-            {
-                FindEducatorsRepository.UpdateSubject(subject);
-            }
-            else
-            {
-                FindEducatorsRepository.InsertSubject(subject);
-            }
-
-            var subjectList = FindEducatorsRepository.GetAllSubjects();
-            ViewBag.SubjectList = subjectList;
-
-            subject.Id = -1;
-            subject.SubjectName = "";
-
-            ViewBag.Subject = subject;
-
             return View();
         }
 
 
-        public ActionResult DeleteSubject(int id = 0)
+        public ActionResult Subject()
         {
-            FindEducatorsRepository.DeleteSubject(id);
-
-            return RedirectToAction("Subject");
+            return View();
         }
+
+
         public ActionResult SubjectCategory()
         {
             return View();
         }
+
+
         public ActionResult TestLevel()
         {
             return View();
         }
+
+
         public ActionResult Test()
         {
             return View();
         }
+
+
         public ActionResult TestType()
         {
             return View();
