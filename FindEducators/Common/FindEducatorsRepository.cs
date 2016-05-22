@@ -23,7 +23,7 @@ namespace FindEducators.Common
 
             return degreeType;
         }
-<<<<<<< HEAD
+
         public static Test GetTestById(int testId)
         {
             var test = new Test();
@@ -57,7 +57,7 @@ namespace FindEducators.Common
 
             return testLevel;
         }
-=======
+
         public static Area GetAreaById(int Id)
         {
             var area = new Area();
