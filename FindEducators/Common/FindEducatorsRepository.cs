@@ -179,7 +179,7 @@ namespace FindEducators.Common
 
              return subjectCategory;
          }
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
+
         #endregion
 
         #region List
@@ -195,7 +195,7 @@ namespace FindEducators.Common
 
             return degreeTypeList;
         }
-<<<<<<< HEAD
+
         public static List<Test> GetAllTests()
         {
             var testList = new List<Test>();
@@ -218,6 +218,7 @@ namespace FindEducators.Common
 
             return testTypeList;
         }
+
         public static List<TestLevel> GetAllTestLevels()
         {
             var testLevelList = new List<TestLevel>();
@@ -228,7 +229,8 @@ namespace FindEducators.Common
             }
 
             return testLevelList;
-=======
+        }
+
         public static List<Area> GetAllAreas()
         {
             var areaList = new List<Area>();
@@ -349,11 +351,11 @@ namespace FindEducators.Common
             }
 
             return subjectCategoryList;
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
+
         }
         #endregion
 
-        #region Insert
+      
 
         public static void InsertDegreeType(DegreeType degreeType)
         {
@@ -364,7 +366,7 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-<<<<<<< HEAD
+
         public static void InsertTest(Test test)
         {
 
@@ -374,38 +376,42 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-        public static void InsertTestType(TestType testType)
-=======
-        public static void InsertArea(Area area)
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
-        {
 
-            using (FindEducatorsContext db = new FindEducatorsContext())
+        public static void InsertTestType(TestType testType)
+        {
+             using (FindEducatorsContext db = new FindEducatorsContext())
             {
-<<<<<<< HEAD
                 db.TestTypes.Add(testType);
                 db.SaveChanges();
             }
         }
-        public static void InsertTestLevel(TestLevel testLevel)
-=======
-                db.Areas.Add(area);
+        public static void InsertArea(Area area)
+        {
+            using (FindEducatorsContext db = new FindEducatorsContext())
+            {
+                  db.Areas.Add(area);
                 db.SaveChanges();
             }
         }
-        public static void InsertDegree(Degree degree)
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
+        public static void InsertTestLevel(TestLevel testLevel)
         {
-
-            using (FindEducatorsContext db = new FindEducatorsContext())
+           using(FindEducatorsContext db = new FindEducatorsContext())
             {
-<<<<<<< HEAD
                 db.TestLevels.Add(testLevel);
                 db.SaveChanges();
             }
         }
-        #endregion
-=======
+
+        public static void testestes()
+        {
+            //jkjkjkjkjkjkjkj
+        }
+
+
+        public static void InsertDegree(Degree degree)
+        {
+                using (FindEducatorsContext db = new FindEducatorsContext())
+            {
                 db.Degrees.Add(degree);
                 db.SaveChanges();
             }
@@ -421,7 +427,6 @@ namespace FindEducators.Common
         }
         public static void InsertFeedbackType(FeedbackType feedbackType)
         {
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
 
             using (FindEducatorsContext db = new FindEducatorsContext())
             {
@@ -492,7 +497,7 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-        #endregion
+       
         
         #region Update
         public static void UpdateDegreeType(DegreeType degreeType)
@@ -504,7 +509,7 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-<<<<<<< HEAD
+
         public static void UpdateTest(Test test)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -525,13 +530,16 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
+
         public static void UpdateTestLevel(TestLevel testLevel)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
             {
                 var tempTestlevel = db.TestLevels.Single(x => x.Id == testLevel.Id);
                 tempTestlevel.TestLevelName = testLevel.TestLevelName;
-=======
+            }
+        }
+
         public static void UpdateArea(Area area)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -638,7 +646,6 @@ namespace FindEducators.Common
             {
                 var tempSubjectCategory = db.SubjectCategories.Single(x => x.Id == subjectCategory.Id);
                 tempSubjectCategory.SubjectCategoryName = subjectCategory.SubjectCategoryName;
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
                 db.SaveChanges();
             }
         }
@@ -666,26 +673,36 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-<<<<<<< HEAD
-        public static void DeleteTestType(int testTypeId)
-=======
-        public static void DeleteArea(int areaId)
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
-        {
 
+        public static void DeleteTestType(int testTypeId)
+        {
             using (FindEducatorsContext db = new FindEducatorsContext())
             {
-<<<<<<< HEAD
                 var tempTestType = db.TestTypes.Single(x => x.Id == testTypeId);
                 db.TestTypes.Remove(tempTestType);
                 db.SaveChanges();
             }
         }
+
+        public static void DeleteArea(int areaId)
+        {
+            using (FindEducatorsContext db = new FindEducatorsContext())
+            {
+
+                var tempAreas = db.Areas.Single(x => x.Id == areaId);
+                db.Areas.Remove(tempAreas);
+                db.SaveChanges();
+            }
+
+        }
         
         public static void DeleteTestLevel(int testLevelId)
-=======
-                var tempDegreeType = db.DegreeTypes.Single(x => x.Id ==areaId);
-                db.DegreeTypes.Remove(tempDegreeType);
+        {
+            using(FindEducatorsContext db = new FindEducatorsContext())
+            {
+
+                var tempTestLevel = db.TestLevels.Single(x => x.Id == testLevelId);
+                db.TestLevels.Remove(tempTestLevel);
                 db.SaveChanges();
             }
         }
@@ -780,20 +797,15 @@ namespace FindEducators.Common
             }
         }
         public static void DeleteSubjectCategory(int subjectCategoryId)
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
+
         {
 
             using (FindEducatorsContext db = new FindEducatorsContext())
             {
-<<<<<<< HEAD
-                var tempTestLevel = db.TestLevels.Single(x => x.Id == testLevelId);
-                db.TestLevels.Remove(tempTestLevel);
-               db.SaveChanges();
-=======
+                
                 var tempSubjectCategory = db.SubjectCategories.Single(x => x.Id == subjectCategoryId);
                 db.SubjectCategories.Remove(tempSubjectCategory);
                 db.SaveChanges();
->>>>>>> 0d6009dee8d5876ccbd9a61c80fa666f93ddf503
             }
         }
         #endregion
