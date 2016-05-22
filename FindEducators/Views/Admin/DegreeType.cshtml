@@ -57,8 +57,7 @@
                                                 <th>
                                                     Degree Type
                                                 </th>
-                                                <th>
-                                                   
+                                                <th>   
                                                 </th>
                                                 <th>
                                                     
@@ -66,26 +65,26 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var degreeType in  ViewBag.DegreeTypeList)
+                                            @foreach (var degreeType in ViewBag.DegreeTypeList)
                                             {
-                                                <tr>
-                                                    <td class="center">
-                                                        @degreeType.DegreeTypeName
-                                                    </td>
-                                                    <td style="width:20px;">
-                                                        <a class="edit" href='@Url.Action("DegreeType", "Admin",new{id=degreeType.Id})'>
-                                                            <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
-                                                        </a>
-                                                    </td>
-                                                    <td style="width:20px;">
-                                                        <a class="delete" href='@Url.Action("DeleteDegreeType", "Admin",new{id=degreeType.Id})'>
-                                                            <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            }
-                                            
 
+                                            <tr>
+                                                <td class="center">
+                                                    @degreeType.DegreeTypeName
+                                                </td>
+                                                <td style="width:20px;">
+                                                    <a class="edit" href='@Url.Action("DegreeType", "Admin",new{id=degreeType.Id})'>
+                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
+                                                    </a>
+                                                </td>
+                                                <td style="width:20px;">
+                                                    <a class="delete" href='@Url.Action("DeleteDegreeType", "Admin",new{id=degreeType.Id})'>
+                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            }
+                         
                                         </tbody>
                                     </table>
                                 </div>

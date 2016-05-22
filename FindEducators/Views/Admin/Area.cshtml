@@ -1,9 +1,7 @@
 ﻿@using FindEducators.Common
-@using FindEducators.Controllers
-@model FindEducators.Models.LogType
 
 @{
-    ViewBag.Title = "LogType";
+    ViewBag.Title = "Area";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div class="clearfix">
@@ -15,7 +13,7 @@
             <div class="portlet-title">
                 <div class="caption">
                     <i class="fa fa-list" style="font-size: 20px;text-transform: uppercase;">
-                        Log Types <small style="font-size: 12px;">ENTRY FORM</small>
+                        Areas <small style="font-size: 12px;">ENTRY FORM</small>
                     </i>
                 </div>
                 <div class="tools">
@@ -25,71 +23,65 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-               @using (Html.BeginForm("LogType", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+               @using (Html.BeginForm("Area", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
                {
-
                    <div class="container-fluid">
                        <div class="row">
                            <div class="col-md-6">
                                <div class="form-body">
                                    @{
-                                             var tempLogtype = ViewBag.LogType;
-
-
-                                         }
-
+                                       var tempArea = ViewBag.Area;
+                                   }
                                    <div class="form-group" style="margin: 53px 0px 0px 0px">
                                        <div class="col-md-12">
-                                           <input type="hidden" name="Id" id="txtLogTypeId" value="@tempLogtype.Id">
-                                           <input type="text" class="form-control" name="LogTypeName" value="@tempLogtype.LogTypeName" placeholder="Log Type Name"  />                                           
+                                           <input type="hidden" name="Id" id="txtAreaId" value="@tempArea.Id">
+                                           <input type="text" class="form-control" name="AreaName" value="@tempArea.AreaName" placeholder="Area Name" />
+                                           <input type="text" class="form-control" name=" CityId" value="@tempArea.CityId" placeholder= "City ID" />
                                        </div>
                                    </div>
-
                                </div>
                            </div>
                            <div class="col-md-6">
+                              
 
                                <div style="margin: 20px 0px 0px 0px">
                                    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                        <thead>
                                            <tr>
                                                <th>
-                                                   Log Type Name
+                                                   Area Name
                                                </th>
                                                <th>
-
                                                </th>
                                                <th>
-
                                                </th>
                                            </tr>
                                        </thead>
                                        <tbody>
-                                           @foreach (var logType in  ViewBag.LogTypeList)
+                                           @foreach (var area in  ViewBag.AreaList)
                                            {
                                                <tr>
                                                    <td class="center">
-                                                       @logType.LogTypeName
+                                                       @area.AreaName
                                                    </td>
                                                    <td style="width: 20px;">
-                                                       <a class="edit" href='@Url.Action("LogType", "Admin",new{id=logType.Id})'>
+                                                       <a class="edit" href='@Url.Action("DeleteArea", "Admin",new{id=area.Id})'>
                                                            <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
                                                        </a>
                                                    </td>
                                                    <td style="width: 20px;">
-                                                       <a class="delete" href='@Url.Action("DeleteLogType", "Admin",new{id=logType.Id})'>
+                                                       <a class="delete" href='@Url.Action("Area", "Admin",new{id=area.Id})'>
                                                            <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
                                                        </a>
                                                    </td>
                                                </tr>
-                                           }    
+                                           }
                                        </tbody>
                                    </table>
                                </div>
                            </div>
                        </div>
                    </div>
-
                    <div class="form-actions">
                        <div class="row">
                            <div class="col-md-offset-3 col-md-9">
@@ -107,4 +99,6 @@
 </div>
 <div class="clearfix">
 </div>
+
+
 

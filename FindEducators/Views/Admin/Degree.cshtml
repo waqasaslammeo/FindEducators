@@ -23,71 +23,84 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" class="form-horizontal">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-body">
+               @using (Html.BeginForm("Degree", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+               {
+                   <div class="container-fluid">
+                       <div class="row">
+                           <div class="col-md-6">
+                               <div class="form-body">
+                                                   @{
+                                   var tempDegree = ViewBag.Degree;
 
-                                    <div class="form-group" style="margin:53px 0px 0px 0px">
-                                        <div class="col-md-12">
-                                            <input type="hidden" name="DegreeId" id="txtDegreeId">
-                                            <input type="text" class="form-control" placeholder="Degree Name" />
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                            <div class="col-md-6">
+                                                   }
 
-                                <div style="margin:20px 0px 0px 0px">
-                                    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    Degree Name
-                                                </th>
-                                                <th>
 
-                                                </th>
-                                                <th>
+                                   <div class="form-group" style="margin: 53px 0px 0px 0px">
+                                       <div class="col-md-12">
+                                           <input type="hidden" name="Id" id="txtDegreeId" value="@tempDegree.Id">
+                                           <input type="text" class="form-control" name="DegreeName" value="@tempDegree.DegreeName" placeholder="Degree Name" />
+                                           <input type="text" class="form-control" name="DegreeTypeId" value="@tempDegree.DegreeTypeId" placeholder="Degree Type Id" />
+                                           <input type="text" class="form-control" name="DegreeAbbrivation" value="@tempDegree.DegreeAbbrivation" placeholder="Degree Abbrivation" />
+                                       </div>
+                                   </div>
 
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    power user
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="edit" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="delete" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                            </tr>
+                               </div>
+                           </div>
+                           <div class="col-md-6">
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                               <div style="margin: 20px 0px 0px 0px">
+                                   <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                                       <thead>
+                                           <tr>
+                                               <th>
+                                                   Degree Name
+                                               </th>
+                                               <th>
 
-                    <div class="form-actions">
-                        <div class="row">
-                            <div class="col-md-offset-3 col-md-9">
-                                <button type="submit" class="btn green">Submit</button>
-                                <button type="button" class="btn default">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                                               </th>
+                                               <th>
+
+                                               </th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>
+                                           @foreach (var degree in ViewBag.DegreeList)
+                                           {
+                                               <tr>
+                                                   <td class="center">
+                                                       @degree.DegreeName
+                                                   </td>
+
+                                              
+                                                   <td style="width: 20px;">
+                                                       <a class="edit" href="javascript:;">
+                                                           <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
+                                                       </a>
+                                                   </td>
+                                                   <td style="width: 20px;">
+                                                       <a class="delete" href="javascript:;">
+                                                           <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
+                                                       </a>
+                                                   </td>
+                                               </tr>
+                                           }
+                                       </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="form-actions">
+                       <div class="row">
+                           <div class="col-md-offset-3 col-md-9">
+                               <button type="submit" class="btn green">Submit</button>
+                               <button type="button" class="btn default">Cancel</button>
+                           </div>
+                       </div>
+                   </div>
+               }
                 <!-- END FORM-->
             </div>
         </div>
