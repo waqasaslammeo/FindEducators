@@ -24,16 +24,23 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" class="form-horizontal">
+                @using (Html.BeginForm("SubjectCategory", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+                {
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-body">
+                                    
+                                    @{
+                 
+                                           var tempSubjectcategory = ViewBag.SubjectCategory;
 
-                                    <div class="form-group" style="margin:53px 0px 0px 0px">
+
+                                    }
+                                    <div class="form-group" style="margin: 53px 0px 0px 0px">
                                         <div class="col-md-12">
-                                            <input type="hidden" name="SubjectCategoryId" id="txtSubjectCategoryId">
-                                            <input type="text" class="form-control" placeholder="Subject Category Name" />
+                                            <input type="hidden" name="Id" id="txtSubjectCategoryId" value="@tempSubjectcategory.Id">
+                                            <input type="text" class="form-control" name="SubjectCategoryName" value="@tempSubjectcategory.SubjectCategoryName" placeholder="Subject Category Name" />
                                         </div>
                                     </div>
 
@@ -41,7 +48,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <div style="margin:20px 0px 0px 0px">
+                                <div style="margin: 20px 0px 0px 0px">
                                     <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                         <thead>
                                             <tr>
@@ -57,21 +64,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    power user
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="edit" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="delete" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            @foreach (var subjectCategory in ViewBag.SubjectCategoryList)
+                                            {
+                                                <tr>
+                                                    <td class="center">
+                                                        @subjectCategory.SubjectCategoryName
+                                                    </td>
+                                                    <td style="width: 20px;">
+                                                        <a class="edit" href='@Url.Action("SubjectCategory", "Admin", new { id = subjectCategory.Id })'>
+                                                            <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
+                                                        </a>
+                                                    </td>
+                                                    <td style="width: 20px;">
+                                                        <a class="delete" href='@Url.Action("DeleteSubjectCategory", "Admin", new { id = subjectCategory.Id })'>
+                                                            <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
 
                                         </tbody>
                                     </table>
@@ -88,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                }
                 <!-- END FORM-->
             </div>
         </div>

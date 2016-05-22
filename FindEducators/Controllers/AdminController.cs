@@ -286,21 +286,220 @@ namespace FindEducators.Controllers
 
             return RedirectToAction("Subject");
         }
-        public ActionResult SubjectCategory()
+       
+
+        [HttpGet]
+        public ActionResult SubjectCategory(int id = 0)
         {
+            var subjectCategoryList = FindEducatorsRepository.GetAllSubjectCategories();
+            var subjectCategory = new SubjectCategory();
+            if (id > 0)
+            {
+                subjectCategory = FindEducatorsRepository.GetSubjectCategoryById(id);
+            }
+            else
+            {
+                subjectCategory.Id = -1;
+                subjectCategory.SubjectCategoryName = "";
+            }
+
+            ViewBag.SubjectCategoryList = subjectCategoryList;
+
+            ViewBag.SubjectCategory = subjectCategory;
+            return View(subjectCategory);
+        }
+
+        [HttpPost]
+        public ActionResult SubjectCategory(SubjectCategory subjectCategory)
+        {
+            if (subjectCategory.Id > -1)
+            {
+                FindEducatorsRepository.UpdateSubjectCategory(subjectCategory);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertSubjectCategory(subjectCategory);
+            }
+
+            var subjectCategoryList = FindEducatorsRepository.GetAllSubjectCategories();
+            ViewBag.SubjectCategoryList = subjectCategoryList;
+
+            subjectCategory.Id = -1;
+            subjectCategory.SubjectCategoryName = "";
+
+            ViewBag.SubjectCategory = subjectCategory;
+
             return View();
         }
-        public ActionResult TestLevel()
+
+
+        public ActionResult DeleteSubjectCategory(int id = 0)
         {
+            FindEducatorsRepository.DeleteSubjectCategory(id);
+
+            return RedirectToAction("SubjectCategory");
+        }
+
+
+
+      
+        [HttpGet]
+        public ActionResult TestLevel(int id = 0)
+        {
+            var testLevelList = FindEducatorsRepository.GetAllTestLevels();
+            var testLevel = new TestLevel();
+            if (id > 0)
+            {
+                testLevel = FindEducatorsRepository.GetTestLevekById(id);
+            }
+            else
+            {
+                testLevel.Id = -1;
+                testLevel.TestLevelName = "";
+            }
+
+            ViewBag.TestLevelList = testLevelList;
+
+            ViewBag.TestLevel = testLevel;
+            return View(testLevel);
+        }
+
+        [HttpPost]
+        public ActionResult TestLevel(TestLevel testLevel)
+        {
+            if (testLevel.Id > -1)
+            {
+                FindEducatorsRepository.UpdateTestLevel(testLevel);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertTestLevel(testLevel);
+            }
+
+            var testLevelList = FindEducatorsRepository.GetAllTestLevels();
+            ViewBag.TestLevelList = testLevelList;
+
+            testLevel.Id = -1;
+            testLevel.TestLevelName = "";
+
+            ViewBag.TestLevel = testLevel;
+
             return View();
         }
-        public ActionResult Test()
+
+
+        public ActionResult DeleteTestLevel(int id = 0)
         {
+            FindEducatorsRepository.DeleteTestLevel(id);
+
+            return RedirectToAction("TestLevel");
+        }
+       
+
+        [HttpGet]
+        public ActionResult Test(int id = 0)
+        {
+            var testList = FindEducatorsRepository.GetAllTests();
+            var test = new Test();
+            if (id > 0)
+            {
+                test = FindEducatorsRepository.GetTestById(id);
+            }
+            else
+            {
+                test.Id = -1;
+                test.TestName = "";
+            }
+
+            ViewBag.TestList = testList;
+
+            ViewBag.Test = test;
+            return View(test);
+        }
+
+        [HttpPost]
+        public ActionResult Test(Test test)
+        {
+            if (test.Id > -1)
+            {
+                FindEducatorsRepository.UpdateTest(test);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertTest(test);
+            }
+
+            var testList = FindEducatorsRepository.GetAllTests();
+            ViewBag.TestList = testList;
+
+            test.Id = -1;
+            test.TestName = "";
+
+            ViewBag.Test = test;
+
             return View();
         }
-        public ActionResult TestType()
+
+
+        public ActionResult DeleteTest(int id = 0)
         {
+            FindEducatorsRepository.DeleteTest(id);
+
+            return RedirectToAction("Test");
+        }
+        
+
+        [HttpGet]
+        public ActionResult TestType(int id = 0)
+        {
+            var testTypeList = FindEducatorsRepository.GetAllTestTypes();
+            var testType = new TestType();
+            if (id > 0)
+            {
+                testType = FindEducatorsRepository.GetTestTypeById(id);
+            }
+            else
+            {
+                testType.Id = -1;
+                testType.TestTypeName = "";
+            }
+
+            ViewBag.TestTypeList = testTypeList;
+
+            ViewBag.TestType = testType;
+            return View(testType);
+        }
+
+        [HttpPost]
+        public ActionResult TestType(TestType testType)
+        {
+            if (testType.Id > -1)
+            {
+                FindEducatorsRepository.UpdateTestType(testType);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertTestType(testType);
+            }
+
+            var testTypeList = FindEducatorsRepository.GetAllTestTypes();
+            ViewBag.TestTypeList = testTypeList;
+
+            testType.Id = -1;
+            testType.TestTypeName = "";
+
+            ViewBag.TestType = testType;
+
             return View();
         }
+
+
+        public ActionResult DeleteTestType(int id = 0)
+        {
+            FindEducatorsRepository.DeleteTestType(id);
+
+            return RedirectToAction("TestType");
+        }
+
     }
 }
