@@ -278,7 +278,6 @@ namespace FindEducators.Controllers
                 feedbackType.FeedbackTypeName = "";
             }
 
-            //-- kami saly , object jo banaya hy list ka wo passs kry ga to kam hoga , , bc ankhain hain k taty hain ?
             ViewBag.FeedbackTypeList = feedbackList;
             ViewBag.FeedbackType = feedbackType;
             return View(feedbackType);
@@ -472,10 +471,55 @@ namespace FindEducators.Controllers
         }
 
 
-        public ActionResult Post ()
+        [HttpGet]
+        public ActionResult Post(int id = 0)
         {
+            var postList = FindEducatorsRepository.GetAllPost();
+            var post = new Post();
+            if (id > 0)
+            {
+                post = FindEducatorsRepository.GetPostById(id);
+            }
+            else
+            {
+                post.Id = -1;
+                post.PostTitle = "";
+            }
+
+            ViewBag.PostList = postList;
+
+            ViewBag.Post = post;
+            return View(post);
+        }
+        [HttpPost]
+        public ActionResult Post(Post post)
+        {
+            if (post.Id > -1)
+            {
+                FindEducatorsRepository.UpdatePost(post);
+            }
+            else
+            {
+                FindEducatorsRepository.InsertPost(post);
+            }
+
+            var postList = FindEducatorsRepository.GetAllPost();
+            ViewBag.PostList = postList;
+
+            post.Id = -1;
+            post.PostTitle = "";
+
+            ViewBag.Post = post;
+
             return View();
         }
+        public ActionResult DeletePost(int id = 0)
+        {
+            FindEducatorsRepository.DeletePost(id);
+
+            return RedirectToAction("Post");
+        }
+        
 
         [HttpGet]
         public ActionResult PostType(int id = 0)

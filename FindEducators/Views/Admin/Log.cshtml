@@ -26,7 +26,7 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-             @using (Html.BeginForm("DegreeType", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+             @using (Html.BeginForm("Log", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
              {
                  <div class="container-fluid">
                      <div class="row">
@@ -38,8 +38,10 @@
                                  <div class="form-group" style="margin: 53px 0px 0px 0px">
                                      <div class="col-md-12">
                                          
-                                         <input type="hidden" name="Id" id="txtLogId" class="form-control" value="@tempLog.Id" placeholder="Log Type ID" />
-                                         
+                                         <input type="hidden" name="Id" id="txtLogId" class="form-control" value="@tempLog.Id"/>
+                                         <input type="text" class="form-control" name="LogTypeId" value="@tempLog.LogTypeId" placeholder="Log Type Id" />
+                                         <input type="text" class="form-control" name="LogDetail" value="@tempLog.LogDetail" placeholder="Log Detail" />
+                                         <input type="text" class="form-control" name="UserId" value="@tempLog.UserId" placeholder="User Id" />
                                      </div>
                                  </div>
 

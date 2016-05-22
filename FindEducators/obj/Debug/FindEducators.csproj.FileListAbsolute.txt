@@ -120,7 +120,6 @@ E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\bin\Microsoft.Owin.Secur
 E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Google.xml
 E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\obj\Debug\FindEducators.csprojResolveAssemblyReference.cache
 E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\obj\Debug\FindEducators.Migrations.InitialCreate.resources
 E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.AdminResources.resources
 E:\Tayyab Personal\Work\fyp\FindEducators\FindEducators\obj\Debug\FindEducators.Resources.FindEducatorsResources.resources
