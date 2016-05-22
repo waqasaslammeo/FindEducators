@@ -355,7 +355,7 @@ namespace FindEducators.Common
         }
         #endregion
 
-      
+        #region Insert
 
         public static void InsertDegreeType(DegreeType degreeType)
         {
@@ -376,7 +376,7 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
+        
         public static void InsertTestType(TestType testType)
         {
              using (FindEducatorsContext db = new FindEducatorsContext())
@@ -401,13 +401,7 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
-        public static void testestes()
-        {
-            //jkjkjkjkjkjkjkj
-        }
-
-
+        
         public static void InsertDegree(Degree degree)
         {
                 using (FindEducatorsContext db = new FindEducatorsContext())
@@ -496,9 +490,10 @@ namespace FindEducators.Common
                 db.PostTypes.Add(postType);
                 db.SaveChanges();
             }
-        }
        
-        
+        }
+        #endregion
+
         #region Update
         public static void UpdateDegreeType(DegreeType degreeType)
         {

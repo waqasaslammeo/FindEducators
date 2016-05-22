@@ -7,7 +7,7 @@ namespace FindEducators
     public partial class Startup
     {
 
-        //sdfsfsdfsdfsdfsdfdsfsasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+        //sdfsfsdfsdfsdfsdfdsfs
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
