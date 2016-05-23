@@ -719,9 +719,13 @@ namespace FindEducators.Common
 
             using (FindEducatorsContext db = new FindEducatorsContext())
             {
-                var tempJobType = db.JobTypes.Single(x => x.Id == jobTypeId);
-                db.JobTypes.Remove(tempJobType);
-                db.SaveChanges();
+                if (jobTypeId > 0)
+                {
+                    var tempJobType = db.JobTypes.Single(x => x.Id == jobTypeId);
+                    db.JobTypes.Remove(tempJobType);
+                    db.SaveChanges();
+                }
+               
             }
         }
         public static void DeleteLog(int logId)

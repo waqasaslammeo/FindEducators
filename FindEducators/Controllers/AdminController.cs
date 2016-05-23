@@ -354,8 +354,9 @@ namespace FindEducators.Controllers
             return View();
         }
 
-        public ActionResult DeleteJobType(int id=0)
+        public ActionResult DeleteJobType(int id = 0)
         {
+           
             FindEducatorsRepository.DeleteJobType(id);
 
             return RedirectToAction("JobType");
@@ -433,7 +434,6 @@ namespace FindEducators.Controllers
             return View(logType);
         }
 
-
         [HttpPost]
         public ActionResult LogType(LogType logType)
         {
@@ -446,12 +446,13 @@ namespace FindEducators.Controllers
                 FindEducatorsRepository.InsertLogType(logType);
             }
 
-            var degreeTypeList = FindEducatorsRepository.GetAllLogTypes();
+            var logTypeList = FindEducatorsRepository.GetAllLogTypes();
             ViewBag.LogType = logType;
 
             logType.Id = -1;
             logType.LogTypeName= "";
 
+            ViewBag.LogTypeList = logTypeList;
             ViewBag.DegreeType = logType;
 
             return View();
@@ -463,13 +464,6 @@ namespace FindEducators.Controllers
 
             return RedirectToAction("LogType");
         }
-
-
-        public ActionResult LogType()
-        {
-            return View();
-        }
-
 
         [HttpGet]
         public ActionResult Post(int id = 0)
@@ -713,6 +707,7 @@ namespace FindEducators.Controllers
                 FindEducatorsRepository.InsertTestLevel(testLevel);
             }
 
+
             var testLevelList = FindEducatorsRepository.GetAllTestLevels();
             ViewBag.TestLevelList = testLevelList;
 
@@ -731,8 +726,6 @@ namespace FindEducators.Controllers
 
             return RedirectToAction("TestLevel");
         }
-
-       
 
         [HttpGet]
         public ActionResult Test(int id = 0)
@@ -778,16 +771,12 @@ namespace FindEducators.Controllers
             return View();
         }
 
-
         public ActionResult DeleteTest(int id = 0)
         {
             FindEducatorsRepository.DeleteTest(id);
 
             return RedirectToAction("Test");
         }
-
-
-        
 
         [HttpGet]
         public ActionResult TestType(int id = 0)
@@ -832,7 +821,6 @@ namespace FindEducators.Controllers
 
             return View();
         }
-
 
         public ActionResult DeleteTestType(int id = 0)
         {

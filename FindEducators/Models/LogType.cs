@@ -8,14 +8,7 @@ namespace FindEducators.Models
 {
     public class LogType
     {
-
-
         public int Id { get; set; }
-
-
-        public string LogTypeName { get; set; }
-
-        
-
+        public string LogTypeName { get; set; }       
     }
 }
