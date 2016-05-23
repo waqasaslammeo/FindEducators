@@ -24,16 +24,24 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" class="form-horizontal">
+                @using (Html.BeginForm("TestType", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+                {
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-body">
+                                    @{
+                  
+                    
+                                        var tempTesttype = ViewBag.TestType;
 
-                                    <div class="form-group" style="margin:53px 0px 0px 0px">
+
+                                    }
+
+                                    <div class="form-group" style="margin: 53px 0px 0px 0px">
                                         <div class="col-md-12">
-                                            <input type="hidden" name="TestTypeId" id="txtTestTypeId">
-                                            <input type="text" class="form-control" placeholder="Test Type Name" />
+                                            <input type="hidden" name="Id" id="txtTestTypeId" value="@tempTesttype.Id">
+                                            <input type="text" class="form-control" name="TestTypeName" value="@tempTesttype.TestTypeName" placeholder="Test Type Name" />
                                         </div>
                                     </div>
 
@@ -41,7 +49,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <div style="margin:20px 0px 0px 0px">
+                                <div style="margin: 20px 0px 0px 0px">
                                     <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                         <thead>
                                             <tr>
@@ -57,21 +65,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach (var testType in ViewBag.TestTypeList)
+                                            {
                                             <tr>
                                                 <td class="center">
-                                                    power user
+                                                    @testType.TestTypeName
                                                 </td>
-                                                <td style="width:20px;">
-                                                    <a class="edit" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
+                                                <td style="width: 20px;">
+                                                    <a class="edit" href='@Url.Action("TestType", "Admin", new { id = testType.Id })'>
+                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
                                                     </a>
                                                 </td>
-                                                <td style="width:20px;">
-                                                    <a class="delete" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
+                                                <td style="width: 20px;">
+                                                    <a class="delete" href='@Url.Action("DeleteTestType", "Admin", new { id = testType.Id })'>
+                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
                                                     </a>
                                                 </td>
                                             </tr>
+                                            }
 
                                         </tbody>
                                     </table>
@@ -88,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                }
                 <!-- END FORM-->
             </div>
         </div>

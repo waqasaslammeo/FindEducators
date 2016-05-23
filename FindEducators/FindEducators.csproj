@@ -5023,9 +5023,9 @@
     <Content Include="Views\Admin\SignUp.cshtml" />
     <Content Include="Views\Admin\SignIn.cshtml" />
     <Content Include="Views\Admin\DegreeType.cshtml" />
-    <Content Include="Views\Admin\Areas.cshtml" />
+    <Content Include="Views\Admin\Area.cshtml" />
     <Content Include="Views\Admin\Degree.cshtml" />
-    <Content Include="Views\Admin\Institution.cshtml" />
+    <Content Include="Views\Admin\Institute.cshtml" />
     <Content Include="Views\Admin\FeedbackType.cshtml" />
     <Content Include="Views\Admin\JobType.cshtml" />
     <Content Include="Views\Admin\Log.cshtml" />

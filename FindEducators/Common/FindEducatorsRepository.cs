@@ -23,7 +23,6 @@ namespace FindEducators.Common
 
             return degreeType;
         }
-
         public static Test GetTestById(int testId)
         {
             var test = new Test();
@@ -57,7 +56,6 @@ namespace FindEducators.Common
 
             return testLevel;
         }
-
         public static Area GetAreaById(int Id)
         {
             var area = new Area();
@@ -195,7 +193,6 @@ namespace FindEducators.Common
 
             return degreeTypeList;
         }
-
         public static List<Test> GetAllTests()
         {
             var testList = new List<Test>();
@@ -218,7 +215,6 @@ namespace FindEducators.Common
 
             return testTypeList;
         }
-
         public static List<TestLevel> GetAllTestLevels()
         {
             var testLevelList = new List<TestLevel>();
@@ -230,7 +226,6 @@ namespace FindEducators.Common
 
             return testLevelList;
         }
-
         public static List<Area> GetAllAreas()
         {
             var areaList = new List<Area>();
@@ -355,8 +350,7 @@ namespace FindEducators.Common
         }
         #endregion
 
-      
-
+        #region Insert
         public static void InsertDegreeType(DegreeType degreeType)
         {
             
@@ -366,7 +360,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
         public static void InsertTest(Test test)
         {
 
@@ -376,7 +369,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
         public static void InsertTestType(TestType testType)
         {
              using (FindEducatorsContext db = new FindEducatorsContext())
@@ -401,13 +393,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
-        public static void testestes()
-        {
-            //jkjkjkjkjkjkjkj
-        }
-
-
         public static void InsertDegree(Degree degree)
         {
                 using (FindEducatorsContext db = new FindEducatorsContext())
@@ -497,7 +482,7 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-       
+        #endregion
         
         #region Update
         public static void UpdateDegreeType(DegreeType degreeType)
@@ -509,7 +494,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
         public static void UpdateTest(Test test)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -530,7 +514,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
         public static void UpdateTestLevel(TestLevel testLevel)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -539,7 +522,6 @@ namespace FindEducators.Common
                 tempTestlevel.TestLevelName = testLevel.TestLevelName;
             }
         }
-
         public static void UpdateArea(Area area)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -652,7 +634,6 @@ namespace FindEducators.Common
         #endregion
 
         #region Delete
-
         public static void DeleteDegreeType(int degreeTypeId)
         {
 
@@ -673,7 +654,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
         public static void DeleteTestType(int testTypeId)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -683,7 +663,6 @@ namespace FindEducators.Common
                 db.SaveChanges();
             }
         }
-
         public static void DeleteArea(int areaId)
         {
             using (FindEducatorsContext db = new FindEducatorsContext())
@@ -695,7 +674,6 @@ namespace FindEducators.Common
             }
 
         }
-        
         public static void DeleteTestLevel(int testLevelId)
         {
             using(FindEducatorsContext db = new FindEducatorsContext())

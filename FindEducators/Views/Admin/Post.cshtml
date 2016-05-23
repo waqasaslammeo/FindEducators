@@ -24,19 +24,27 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" class="form-horizontal">
+                @using (Html.BeginForm("Post", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+                {
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-body">
+                                    
+                                    @{
+                   
+                                        var tempPost = ViewBag.Post;
 
-                                    <div class="form-group" style="margin:53px 0px 0px 0px">
+
+                                    }
+
+                                    <div class="form-group" style="margin: 53px 0px 0px 0px">
                                         <div class="col-md-12">
-                                            <input type="hidden" name="PostId" id="txtPostId">
-                                            <input type="text" class="form-control" placeholder="Post Title" />
-                                            <input type="text" class="form-control" placeholder="Post Date" />
-                                            <input type="text" class="form-control" placeholder="Posted By" />
-                                            <input type="text" class="form-control" placeholder="Post Type Id" />
+                                            <input type="hidden" name="Id" id="txtPostId" value="@tempPost.Id">
+                                            <input type="text" class="form-control" name="PostTitle" value="@tempPost.PostTitle" placeholder="Post Title" />
+                                            <input type="text" class="form-control" name="PostDate" value="@tempPost.PostDate" placeholder="Post Date" />
+                                            <input type="text" class="form-control" name="PostedBy" value="@tempPost.PostedBy" placeholder="Posted By" />
+                                            <input type="text" class="form-control" name="PostTypeId" value="@tempPost.PostTypeId" placeholder="Post Type Id" />
                                         </div>
                                     </div>
 
@@ -44,7 +52,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <div style="margin:20px 0px 0px 0px">
+                                <div style="margin: 20px 0px 0px 0px">
                                     <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                         <thead>
                                             <tr>
@@ -60,22 +68,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    power user
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="edit" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="delete" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                            </tr>
-
+                                            @foreach (var post in ViewBag.PostList)
+                                            {
+                                                <tr>
+                                                    <td class="center">
+                                                        @post.PostName
+                                                    </td>
+                                                    <td style="width: 20px;">
+                                                        <a class="edit" href='@Url.Action("Post", "Admin", new { id = post.Id })'>
+                                                            <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
+                                                        </a>
+                                                    </td>
+                                                    <td style="width: 20px;">
+                                                        <a class="delete" href='@Url.Action("DeletePost", "Admin", new { id = post.Id })'>
+                                                            <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
                                         </tbody>
                                     </table>
                                 </div>
@@ -91,7 +101,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                }
                 <!-- END FORM-->
             </div>
         </div>

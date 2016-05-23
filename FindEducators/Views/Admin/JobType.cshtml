@@ -1,4 +1,6 @@
 ﻿@using FindEducators.Common
+@using FindEducators.Controllers
+@model FindEducators.Models.JobType
 
 @{
     ViewBag.Title = "JobType";
@@ -24,71 +26,80 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" class="form-horizontal">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-body">
+               @using (Html.BeginForm("JobType", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+               {
+                   <div class="container-fluid">
+                       <div class="row">
+                           <div class="col-md-6">
+                               <div class="form-body">
+                                   @{
+                 
+                                       var tempJobtype = ViewBag.JobType;
 
-                                    <div class="form-group" style="margin:53px 0px 0px 0px">
-                                        <div class="col-md-12">
-                                            <input type="hidden" name="JobTypeId" id="txtJobTypeId">
-                                            <input type="text" class="form-control" placeholder="Job Name" />
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                            <div class="col-md-6">
+                                   }
 
-                                <div style="margin:20px 0px 0px 0px">
-                                    <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                   Job Name
-                                                </th>
-                                                <th>
+                                   <div class="form-group" style="margin: 53px 0px 0px 0px">
+                                       <div class="col-md-12">
+                                           <input type="hidden" name="Id" id="txtJobTypeId" value="@tempJobtype.Id">
+                                           <input type="text" class="form-control" name="JobTypeName" value="@tempJobtype.JobTypeName" placeholder="Job Type Name" />
+                                       </div>
+                                   </div>
 
-                                                </th>
-                                                <th>
+                               </div>
+                           </div>
+                           <div class="col-md-6">
 
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    power user
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="edit" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="delete" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                            </tr>
+                               <div style="margin: 20px 0px 0px 0px">
+                                   <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                                       <thead>
+                                           <tr>
+                                               <th>
+                                                   Job Type Name
+                                               </th>
+                                               <th>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                               </th>
+                                               <th>
 
-                    <div class="form-actions">
-                        <div class="row">
-                            <div class="col-md-offset-3 col-md-9">
-                                <button type="submit" class="btn green">Submit</button>
-                                <button type="button" class="btn default">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                                               </th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>
+                                           @foreach (var jobType in ViewBag.JobTypeList)
+                                           {
+                                               <tr>
+                                                   <td class="center">
+                                                       @jobType.JobTypeName
+                                                   </td>
+                                                   <td style="width: 20px;">
+                                                       <a class="edit" href='@Url.Action("JobType", "Admin",new{id=jobType.Id})'>
+                                                           <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
+                                                       </a>
+                                                   </td>
+                                                   <td style="width: 20px;">
+                                                       <a class="delete" href='@Url.Action("DeleteJobType", "Admin",new{id=tempJobtype.Id})'>
+                                                           <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
+                                                       </a>
+                                                   </td>
+                                               </tr>
+                                           }
+                                       </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="form-actions">
+                       <div class="row">
+                           <div class="col-md-offset-3 col-md-9">
+                               <button type="submit" class="btn green">Submit</button>
+                               <button type="button" class="btn default">Cancel</button>
+                           </div>
+                       </div>
+                   </div>
+               }
                 <!-- END FORM-->
             </div>
         </div>

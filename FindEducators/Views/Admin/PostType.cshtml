@@ -24,16 +24,24 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" class="form-horizontal">
+                @using (Html.BeginForm("PostType", "Admin", FormMethod.Post, new {@class = "form-horizontal"}))
+                {
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-body">
+                                    
+                                    @{
+                 
+                                        var tempPosttype = ViewBag.PostType;
 
-                                    <div class="form-group" style="margin:53px 0px 0px 0px">
+
+                                    }
+
+                                    <div class="form-group" style="margin: 53px 0px 0px 0px">
                                         <div class="col-md-12">
-                                            <input type="hidden" name="PostTypeId" id="txtPostTypeId">
-                                            <input type="text" class="form-control" placeholder="Post Type Name" />
+                                            <input type="hidden" name="Id" id="txtPostTypeId" value="@tempPosttype.Id">
+                                            <input type="text" class="form-control" name="PostTypeName" value="@tempPosttype.PostTypeName" placeholder="Post Type Name" />
                                         </div>
                                     </div>
 
@@ -41,7 +49,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <div style="margin:20px 0px 0px 0px">
+                                <div style="margin: 20px 0px 0px 0px">
                                     <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                         <thead>
                                             <tr>
@@ -57,21 +65,24 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="center">
-                                                    power user
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="edit" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_EDIT" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                                <td style="width:20px;">
-                                                    <a class="delete" href="javascript:;">
-                                                        <img src="@AdminCommonResources.IMG_DELETE" style="width:18px;">
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            @foreach (var postType in ViewBag.PostTypeList)
+                                            {
+                                                <tr>
+                                                    <td class="center">
+                                                        @postType.PostTypeName
+                                                    </td>
+                                                    <td style="width: 20px;">
+                                                        <a class="edit" href='@Url.Action("PostType", "Admin", new { id = postType.Id })'>
+                                                            <img src="@AdminCommonResources.IMG_EDIT" style="width: 18px;">
+                                                        </a>
+                                                    </td>
+                                                    <td style="width: 20px;">
+                                                        <a class="delete" href='@Url.Action("DeletePostType", "Admin", new { id = postType.Id })'>
+                                                            <img src="@AdminCommonResources.IMG_DELETE" style="width: 18px;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
 
                                         </tbody>
                                     </table>
@@ -88,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                }
                 <!-- END FORM-->
             </div>
         </div>
