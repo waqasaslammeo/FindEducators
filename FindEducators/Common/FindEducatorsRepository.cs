@@ -178,6 +178,57 @@ namespace FindEducators.Common
              return subjectCategory;
          }
 
+        public static List<User> GetAllUsers()
+        {
+            using (FindEducatorsContext db = new FindEducatorsContext())
+            {
+                var userList= db.Users.ToList();
+                return userList;
+            }
+
+            return null;
+        } 
+
+         public static List<User> GetAllTeachersByArea(int areaId)
+        {
+            var userIdList = new List<int>();
+            var teacherlist = new List<User>();
+            using (FindEducatorsContext db = new FindEducatorsContext())
+            {
+               var userLocationList = db.UserLocations.Where(x => x.AreaId == areaId );
+
+                foreach (var userLocation in userLocationList)
+                {
+
+                    int userId = userLocation.UserId;
+
+                    userIdList.Add(userId);
+                }
+
+                foreach (var id in userIdList)
+                {
+                    var tempUser = db.Users.Where(x => x.Id == id && x.UserTypeId == 1).FirstOrDefault();
+                    teacherlist.Add(tempUser);
+                }
+
+            }
+            return teacherlist;
+        }
+
+        public static List<Job> GetAllJobsByArea(int areaId)
+        {
+            var jobIdList = new List<int>();
+            
+
+            using (FindEducatorsContext db = new FindEducatorsContext())
+            {
+                var jobAreaId = db.UserJobs.Where(x => x.AreaId == areaId).ToList();
+                
+               // jobIdList.Add(jobAreaId);
+
+            }
+            return null;
+        }
         #endregion
 
         #region List
@@ -348,6 +399,16 @@ namespace FindEducators.Common
             return subjectCategoryList;
 
         }
+
+        //public static List<UserType> GetAllTeachersByArea()
+        //{
+        //    var GetAllTeachers = new List<UserType>();
+        //    using (FindEducatorsContext db = new FindEducatorsContext())
+        //    {
+        //        GetAllTeachers = db.UserTypes.ToList();
+        //    }
+        //    return GetAllTeachers;
+        //}
         #endregion
 
         #region Insert
@@ -791,6 +852,35 @@ namespace FindEducators.Common
             }
         }
         #endregion
+
+
+
+        //--------------------Learning--
+
+        public static void LambdaLearning()
+        {
+            using (FindEducatorsContext db = new FindEducatorsContext())
+            {
+                //----------- Get all areas of user id 1 --------------------
+               
+               // //areaname where areaid=3
+               // var areaname = db.Areas.Where(x => x.Id == 3).FirstOrDefault().AreaName;
+
+               // //List of all teachers
+               // var teachers = db.Users.Where(x => x.UserTypeId == 1).ToList();
+               //// list of all teachers where the areaid=3
+               // var getArea = db.UserLocations.Where(x =>x.AreaId == 3 ).ToList();
+               // var getAllteacher = db.Users.Where(x => x.Usertype == 1);
+                
+               //     //total number of areas of cityid=1
+               // var allAreas = db.Areas.Where(x => x.CityId == 1).ToList().Count();
+               // //List of all users whose teaching subjectid=3
+               // var getAllusers = db.UserSubjects.Where(x => x.SubjectId == 3).ToList();
+
+
+            }
+        }
+
 
 
     }

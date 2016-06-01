@@ -15,7 +15,7 @@ namespace FindEducators.Controllers
         public ActionResult Index()
         {
             List<User> lstUsr = new List<User>();
-            
+
 
             using (FindEducatorsContext findEducatorsContext = new FindEducatorsContext())
             {
@@ -23,6 +23,7 @@ namespace FindEducators.Controllers
             }
 
             return View(lstUsr);
+            
         }
 
         [HttpGet]

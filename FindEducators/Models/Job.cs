@@ -29,6 +29,8 @@ namespace FindEducators.Models
         public string Location { get; set; }
 
         public DateTime Timing { get; set; }
+        
+
     
     
     }

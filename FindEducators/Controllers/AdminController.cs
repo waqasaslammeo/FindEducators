@@ -1,17 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using System.Web.Helpers;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using FindEducators.Common;
 using FindEducators.Context;
 using FindEducators.Models;
+using System.Web.Script.Serialization;
 
 namespace FindEducators.Controllers
 {
     public class AdminController : Controller
     {
+
+  
+        public JsonResult GetAllUsers(string email , string password)
+        {
+
+    
+
+            JavaScriptSerializer sr= new JavaScriptSerializer();
+
+            var userList = FindEducatorsRepository.GetAllUsers();
+            var usertemplate = new List<UserTemplate>();
+
+            foreach (var user in userList)
+            {
+                var temp = new UserTemplate();
+                temp.UserId = user.Id;
+                temp.UserName = user.FirstName;
+
+                usertemplate.Add(temp);
+            }
+
+            return Json(sr.Serialize(usertemplate), JsonRequestBehavior.AllowGet);
+
+        }
+
         // GET: Admin
         public ActionResult Index()
         {
@@ -54,7 +84,7 @@ namespace FindEducators.Controllers
 
 
         [HttpGet]
-        public ActionResult DegreeType(int id=0)
+        public ActionResult DegreeType(int id = 0)
         {
             var degreeTypeList = FindEducatorsRepository.GetAllDegreeTypes();
             var degreeType = new DegreeType();
@@ -827,6 +857,21 @@ namespace FindEducators.Controllers
             FindEducatorsRepository.DeleteTestType(id);
 
             return RedirectToAction("TestType");
+        }
+
+
+        public JsonResult GetDumyList()
+        {
+            List<string> str = new List<string>();
+            str.Add("Teachers");
+            str.Add("Parents");
+            str.Add("Students");
+            str.Add("Institutes");
+            str.Add("Schools");
+            JavaScriptSerializer sr= new JavaScriptSerializer();
+
+            return Json(sr.Serialize(str));
+
         }
 
     }

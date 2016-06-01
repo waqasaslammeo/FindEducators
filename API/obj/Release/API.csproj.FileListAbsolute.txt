@@ -1,0 +1,6 @@
+E:\Naqash\FindEducators\FindEducators\API\bin\API.dll.config
+E:\Naqash\FindEducators\FindEducators\API\bin\API.dll
+E:\Naqash\FindEducators\FindEducators\API\bin\API.pdb
+E:\Naqash\FindEducators\FindEducators\API\obj\Release\API.csprojResolveAssemblyReference.cache
+E:\Naqash\FindEducators\FindEducators\API\obj\Release\API.dll
+E:\Naqash\FindEducators\FindEducators\API\obj\Release\API.pdb

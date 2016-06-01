@@ -14,6 +14,8 @@ namespace FindEducators.Models
         public int UserId { get; set; }
         public virtual User Users { get; set; }
         public DateTime ApplyDate { get; set; }
+        public int AreaId { get; set; }
+        public virtual Area Areas { get; set; }
 
     }
 }
